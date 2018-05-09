@@ -24,5 +24,5 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: "Drama"
     }
   });
-  return Post;
+  // return Post;
 };
