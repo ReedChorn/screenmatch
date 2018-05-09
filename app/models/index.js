@@ -33,4 +33,87 @@ Object.keys(db).forEach(function(modelName) {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+module.exports = function(sequelize, DataTypes) {
+var User = sequelize.define("user", {
+  // the routeName gets saved as a string
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
+  },
+  // the name of the user (a string)
+  lastName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
+  },
+  // the last name of the user (a string)
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
+  },
+  // the email of the user (a string)
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [1]
+    }
+  },
+  // the user's password (a string)
+  favRating: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "Ex: G, PG, PG-13",
+    validate: {
+      len: [1]
+    }
+  },
+  // user's preferred movie rating (a string)
+  faveGenre: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "Ex: Action, Comedy, Horror",
+    validate: {
+      len: [1]
+    }
+  },
+  // user's preferred movie genre (a string)
+  favPlatform: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "Ex: Netflix, Hulu, Movie, Youtube",
+    validate: {
+      len: [1]
+    }
+  },
+  // user's preferred movie platform (a string)
+  favActor: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: "Ex: Brad Pitt",
+    validate: {
+      len: [1]
+    }
+  },
+  // actor(s) user wants to see
+}, {
+  timestamps: false
+});
+  return Post;
+}
+
+// Syncs with DB
+Character.sync();
+
+// Makes the Character Model available for other files (will also create a table)
+module.exports = Character;
+
 module.exports = db;
