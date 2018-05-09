@@ -3,7 +3,8 @@ const JustWatch = require('justwatch-api');
 function print_result(name, result)
 {
 	console.log(name+":");
-	console.log(JSON.stringify(result, null, 4));
+    var myobj = JSON.parse(result.items[0].poster)
+    console.log(JSON.Stringify(myobj, null, 4));
 	console.log("\n\n\n\n");
 }
 
