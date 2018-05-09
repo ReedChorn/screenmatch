@@ -18,22 +18,22 @@ var db = require("./app/models");
 // Sets up the Express app to handle data parsing
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }))
 // parse application/json
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 // Static directory
 app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+require("./app/routes/api-routes.js")(app)
+require("./app/routes/html-routes.js")(app)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-});
+    console.log("App listening on PORT " + PORT)
+  })
+})
