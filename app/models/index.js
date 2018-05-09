@@ -97,13 +97,30 @@ var User = sequelize.define("user", {
   // user's preferred movie platform (a string)
   favActor: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
     defaultValue: "Ex: Brad Pitt",
     validate: {
       len: [1]
     }
   },
   // actor(s) user wants to see
+  favDirector: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    defaultValue: "Ex: Wes Anderson",
+    validate: {
+      len: [1]
+    }
+  },
+  // director(s) user wants to see
+  foreignDomestic: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    validate: {
+      len: [1]
+    }
+  },
+  // picking between domestic or foreign films
 }, {
   timestamps: false
 });
