@@ -14,25 +14,31 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the search results
-  app.get("/api/searchResults", function(req, res) {
-    db.Preference.findAll({})
-    .then(function(dbPost) {
-      res.json(dbPost);
+  app.get("/favorites", function(req, res) {
+    db.Favorite.findAll({})
+    .then(function(data) {
+      res.json(data);
     })
   })
 
-  // POST route for saving a new todo. You can add a film to favorites using the data on req.body
-  // app.post("/api/favorites", function(req, res) {
+  //POST route for adding a selection to Favorites
+  app.post("/favorites/add", function(req, res) {
+    db.Favorite.create(
+        { APIfunc: req.body.APIfunc }
+    ).then(function() {
+        res.redirect("/favorites") // re-render html
+    })
+  })
 
-  // });
+  //DELETE route for deleting a favorite movie
+  app.delete("/favorites/remove/:id", function(req, res) {
+    db.Favorite.destroy({
+      where: {
+          id: req.params.id
+      } // where id matches req.params.id
+    }).then(function() {
+        res.redirect("/favorites"); // re-render html
+    })
+  })
 
-  // // DELETE route for deleting favorite movies. You can access the favorites id in req.params.id
-  // app.delete("/api/favorites/:id", function(req, res) {
-
-  // });
-
-  // // PUT route for updating user movie preferences. The updated preferences will be available in req.body
-  // app.put("/api/preferences", function(req, res) {
-
-  // });
-};
+}
