@@ -1,5 +1,6 @@
 
-$(".fav-button").on("click", function (event) {
+$(document).on("click", ".fav-button", function (event) {
+    console.log("fav click")
     event.preventDefault();
     var login = localStorage.getItem("user")
     var favs = {
@@ -27,9 +28,8 @@ $(".fav-button").on("click", function (event) {
         favbtn.removeClass('favorited').addClass('removed');
         favbtn.html("Favorite")
     } 
-
-    
 })
+
 
 
 

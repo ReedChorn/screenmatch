@@ -9,28 +9,16 @@ $(document).ready(function() {
     email: login.email
   };
 
-  function director() {
-    var query = login.fav_director;
-    var url =
-      "https://api.themoviedb.org/3/search/movie?api_key=" +
-      key +
-      "&query=" +
-      query +
-      "";
-    $.get(url, function(data) {
-      console.log(data);
-    });
-  }
-
+  
   function genre() {
     var query = login.fav_genre;
     var url =
-      "https://api.themoviedb.org/3/discover/tv?api_key=" +
+      "https://api.themoviedb.org/3/discover/movie?api_key=" +
       key +
-      "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=" +
+      "&language=en-US&sort_by=popularity.desc&include_adult=false&&with_genres=" +
       query +
       "&page=1";
-    //   console.log(url)
+      console.log(url)
     $.get(url, function(data) {
       for (i = 0; i < 12; i++) {
         console.log(data.results[i])
@@ -39,7 +27,7 @@ $(document).ready(function() {
             <img src="http://image.tmdb.org/t/p/w185//' + data.results[i].poster_path + '" alt="Listing">\
             <div class="item-listing-text-skrn">\
             <div class="item-listing-text-skrn-vertical-align">\
-            <h6><a href="#">' + data.results[i].name + '</a></h6>\
+            <h6><a href="#">' + data.results[i].title + '</a></h6>\
             <div\
             class="circle-rating-pro"\
             data-value="' + data.results[i].vote_average/10 + '"\
