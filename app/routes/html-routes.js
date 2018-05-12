@@ -38,4 +38,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/main.html"));
   });
 
+  app.get("/movies", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard-movies.html"));
+  });
+
+  app.get("/favorites", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard-favorites.html"));
+  });
+
+  app.get("/new-arrivals", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard-new-arrivals.html"));
+  });
+
 };

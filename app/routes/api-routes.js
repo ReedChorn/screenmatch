@@ -75,7 +75,6 @@ module.exports = function(app) {
     var allFavs = req.body;
     console.log(allFavs)
     User.findAll({}).then(function(dbTodo) {
-      // We have access to the todos as an argument inside of the callback function
       res.json(dbTodo);
     });
     
@@ -101,4 +100,23 @@ module.exports = function(app) {
     });
 
   });
+
+  app.post("/api/getFavs", function(req, res) {
+    var userfav = req.body
+    console.log(userfav.email)
+
+    Favorites.findAll({}).then(function(result) {
+      console.log(result[0].omdbID)
+      function sendRes (result) {
+        app.get("/api/sendFavs", function(req, res) {})
+      }
+      // console.log(res.json(result))
+      
+    })
+  })
+
+
+
+
+
 };
