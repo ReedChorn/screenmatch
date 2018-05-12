@@ -55,7 +55,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Welcome to SCREENMATCH!</h5>
+            <h5 class="modal-title" id="welcomeLabel">Welcome to SCREENMATCH!</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -89,7 +89,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Preferences</h5>
+            <h5 class="modal-title" id="prefLabel">Preferences</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -110,9 +110,18 @@
                 </div>
                 <select class="custom-select" id="favorite-genre">
                   <option selected>What is your favorite genre?</option>
-                  <option value="1">Action/Adventure</option>
-                  <option value="2">Animation</option>
-                  <option value="3">Drama</option>
+                  <option value="28">Action</option>
+                  <option value="12">Adventure</option>
+                  <option value="16">Animation</option>
+                  <option value="35">Comedy</option>
+                  <option value="99">Documentary</option>
+                  <option value="18">Drama</option>
+                  <option value="14">Fantasy</option>
+                  <option value="27">Horror</option>
+                  <option value="10749">Romance</option>
+                  <option value="878">Science Fiction</option>
+                  <option value="10752">War</option>
+                  <option value="37">Western</option>
                 </select>
               </div>
               <div class="input-group mb-3">
@@ -121,8 +130,8 @@
                 </div>
                 <select class="custom-select" id="contemporary">
                   <option selected> Do you prefer Contemporary or Classic films?</option>
-                  <option value="1">Contemporary</option>
-                  <option value="2">Classic</option>
+                  <option value="Contemporary">Contemporary</option>
+                  <option value="Classic">Classic</option>
                   <!-- <option value="3">Three</option> -->
                 </select>
               </div>
@@ -131,9 +140,11 @@
                   <!-- <label class="input-group-text" for="inputGroupSelect01">2.</label> -->
                 </div>
                 <select class="custom-select" id="animated">
-                  <option selected> Do you prefer Animated or Live-Action films?</option>
-                  <option value="1">Animated</option>
-                  <option value="2">Live-Action</option>
+                  <option selected> What Rating do you typically prefer?</option>
+                  <option value="G">G</option>
+                  <option value="PG">PG</option>
+                  <option value="PG-13">PG-13</option>
+                  <option value="R">R</option>
                   <!-- <option value="3">Three</option> -->
                 </select>
               </div>
@@ -143,8 +154,8 @@
                 </div>
                 <select class="custom-select" id="domestic">
                   <option selected> Do you prefer Domestic or Foreign films?</option>
-                  <option value="1">Domestic</option>
-                  <option value="2">Foreign</option>
+                  <option value="Domestic">Domestic</option>
+                  <option value="Foreign">Foreign</option>
                 </select>
               </div>
             </form>
@@ -152,7 +163,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-welcome-modal-lg" id="submit-btn">Submit</button>
-            <a href="/home">Click</a>
+            <!-- <a href="/home">Click</a> -->
           </div>
         </div>
       </div>
@@ -181,9 +192,6 @@
           </div>
           <div class="modal-footer">
               <a href = "/home"><button href="/home" type="button" class="btn-secondary">Let's Go!</button></a>
-            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="/home" id="submit-btn">Submit</button>
-            <a href="/home">Click</a> -->
           </div>
         </div>
       </div>
