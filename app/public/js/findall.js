@@ -39,7 +39,7 @@ $(document).ready(function() {
             <img src="http://image.tmdb.org/t/p/w185//' + data.results[i].poster_path + '" alt="Listing">\
             <div class="item-listing-text-skrn">\
             <div class="item-listing-text-skrn-vertical-align">\
-            <h6><a href="#">' + data.results[i].name + '</a></h6>\
+            <h6><a href = "#movie-modal' + data.results[i].id + '" data-toggle="modal" data-target: "#movie-modal' + data.results[i].id + '">' + data.results[i].name + '</a></h6>\
             <div\
             class="circle-rating-pro"\
             data-value="' + data.results[i].vote_average/10 + '"\
@@ -54,9 +54,31 @@ $(document).ready(function() {
                   ><span style="color:#42b740;">' + data.results[i].vote_average + '</span></div>\
                 </div>\
                 </div>\
+                </div>\
+                </div>\
+                <div class="modal fade bd-movie-modal" id = "movie-modal' + data.results[i].id + '" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">\
+                <div class="modal-dialog">\
+                <div class="modal-content">\
+                <div class="modal-header">\
+                <h5 class="modal-title">' + data.results[i].name + '</h5>\
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">\
+                <span aria-hidden="true">&times;</span>\
+                </button>\
+                </div>\
+                <div class="modal-body">\
+                <img src="http://image.tmdb.org/t/p/w300//' + data.results[i].backdrop_path + '" alt="Listing">\
+                <p></p>\
+                <p>' + data.results[i].overview + '</p>\
+                <p> Rating: ' + data.results[i].vote_average + '</p>\
+                </div>\
+                <div class="modal-footer">\
                 <button type="button" class="btn btn-success fav-button removed" value = "' + data.results[i].id + '">Favorite</button>\
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>\
             </div>\
-            </div>'
+            </div>\
+            </div>\
+            </div>\
+            '
         )
         }
     });

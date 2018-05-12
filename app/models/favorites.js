@@ -1,5 +1,6 @@
 var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
+// var sequelize = new Sequelize ('screenmatch_db', 'root');
 
 
 var Favorites = sequelize.define("favorites", {
@@ -14,3 +15,5 @@ var Favorites = sequelize.define("favorites", {
 Favorites.sync();
 
 module.exports = Favorites;
+
+
