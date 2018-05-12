@@ -73,19 +73,32 @@ module.exports = function(app) {
 
   app.get("/api/findAll", function(req, res) {
     var allFavs = req.body;
+    console.log(allFavs)
+    User.findAll({}).then(function(dbTodo) {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(dbTodo);
+    });
+    
   });
+
+  
 
   app.post("/api/userPref", function(req, res) {
     var userPref = req.body;
     console.log(req.body)
 
-    User.findAll({
-      where: {
-        email: userPref.email
-      }
-    }).then(function(result) {
-      return res.json(result);
-      console.log(res)
+    app.get("/api/returnUser", function(req, res) {
+      var userPref = req.body;
+      User.findAll({
+        where: {
+          email: userPref.email
+        }
+      }).then(function(result) {
+        return res.json(result);
+        console.log(result)
+      });
+
     });
+
   });
 };

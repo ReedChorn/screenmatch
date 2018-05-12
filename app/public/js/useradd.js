@@ -18,7 +18,7 @@ $("#submit-btn").on("click", function (event) {
         animated: $("#animated").val().trim(),
         domestic: $("#domestic").val().trim()
     };
-    localStorage.setItem("user", newUser.email)
+    localStorage.setItem("user", JSON.stringify(newUser))
 
     $.post("/api/new", newUser)
     .then(function(data) {
