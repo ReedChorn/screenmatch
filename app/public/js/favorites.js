@@ -29,7 +29,7 @@ $(document).ready(function() {
       "&page=1";
     //   console.log(url)
     $.get(url, function(data) {
-      for (i = 0; i < 6; i++) {
+      for (i = 0; i < 8; i++) {
         console.log(data.results[i]);
         $(".results-div").append('<div class="col-12 col-md-6 col-lg-4 col-xl-3">\
             <div class="item-listing-container-skrn">\

@@ -106,7 +106,7 @@ module.exports = function(app) {
     console.log(userfav.email)
 
     Favorites.findAll({}).then(function(result) {
-      console.log(result[0].omdbID)
+      // console.log(result[0].omdbID)
       function sendRes (result) {
         app.get("/api/sendFavs", function(req, res) {})
       }
