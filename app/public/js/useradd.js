@@ -27,15 +27,5 @@ $("#submit-btn").on("click", function (event) {
 
     });
 
-    
-    // var preferences = {
-    //     fav_director: $("#favorite-director").val().trim(),
-    //     fav_actor: $("#favorite-actor").val().trim(),
-    //     fav_genre: $("#favorite-genre").val().trim(),
-    //     contemporary: $("#contemporary").val().trim(),
-    //     animated: $("#animated").val().trim(),
-    //     domestic: $("#domestic").val().trim()
-    // };
-
 })
 
