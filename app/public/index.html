@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>ScreenMatch</title>
@@ -12,12 +13,13 @@
 
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
 
   <link href="css/style.css" rel="stylesheet">
 
- 
+
 </head>
 
 <body>
@@ -26,35 +28,187 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="#logo"><img src="#" alt="" title="" /></img></a>
+        <a href="#logo">
+          <img src="#" alt="" title="" /></img>
+        </a>
       </div>
     </div>
   </header>
 
   <section id="hero">
     <div class="hero-container">
-      <h1 id = "page-title">ScreenMatch</h1>
+      <h1 id="page-title">ScreenMatch</h1>
       <h4>Find your inner Cinema</h4>
-      <a href="#about" class="btn-get-started">Get Started</a>
+      <a href="#" class="btn-get-started" data-toggle="modal" data-target=".bd-example-modal-lg">Get Started</a>
+      <!-- <button type="button" class="btn-get-started" data-toggle="modal" data-target=".bd-example-modal-lg">Get Started</button> -->
+
     </div>
   </section>
 
   <main id="main">
 
+    <!-- Large modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
 
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+      id="user-modal">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Welcome to SCREENMATCH!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="first-name" class="col-form-label">Please enter your information to create a Profile</label>
+                <input type="text" class="form-control" id="first-name" placeholder="First Name...">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="last-name" placeholder="Last Name..."></input>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="user-email" placeholder="Email...">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="user-password" placeholder="Password...">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" id="next-btn" data-target=".bd-survey-modal-lg">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
+    <div class="modal bd-survey-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Preferences</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <!-- <label for="favorite-director">Who is your favorite Director?</label> -->
+                <input type="text" class="form-control" id="favorite-director" placeholder="Who is your favorite Director?">
+              </div>
+              <div class="form-group">
+                <!-- <label for="favorite-actor"></label> -->
+                <input type="text" class="form-control" id="favorite-actor" placeholder="Who is your favorite Actor/Actress?">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <!-- <label class="input-group-text" for="favorite-genre"></label> -->
+                </div>
+                <select class="custom-select" id="favorite-genre">
+                  <option selected>What is your favorite genre?</option>
+                  <option value="1">Action/Adventure</option>
+                  <option value="2">Animation</option>
+                  <option value="3">Drama</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <!-- <label class="input-group-text" for="inputGroupSelect01"></label> -->
+                </div>
+                <select class="custom-select" id="contemporary">
+                  <option selected> Do you prefer Contemporary or Classic films?</option>
+                  <option value="1">Contemporary</option>
+                  <option value="2">Classic</option>
+                  <!-- <option value="3">Three</option> -->
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <!-- <label class="input-group-text" for="inputGroupSelect01">2.</label> -->
+                </div>
+                <select class="custom-select" id="animated">
+                  <option selected> Do you prefer Animated or Live-Action films?</option>
+                  <option value="1">Animated</option>
+                  <option value="2">Live-Action</option>
+                  <!-- <option value="3">Three</option> -->
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-append">
+                  <!-- <label class="input-group-text" for="inputGroupSelect01">2.</label> -->
+                </div>
+                <select class="custom-select" id="domestic">
+                  <option selected> Do you prefer Domestic or Foreign films?</option>
+                  <option value="1">Domestic</option>
+                  <option value="2">Foreign</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-welcome-modal-lg" id="submit-btn">Submit</button>
+            <a href="/home">Click</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="js/main.js"></script>
+    <div class="modal bd-welcome-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Thanks for Joining!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <h3>Welcome to ScreenMatch!</h3>
+              <p>We'll recommend movies and shows based on your responses to save you the hassle of scrolling endlessly through Netflix or checking TV Guide for new releases</p>
+              <p>We're here to make your viewing experience an easy one!</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="modal-footer">
+              <a href = "/home"><button href="/home" type="button" class="btn-secondary">Let's Go!</button></a>
+            <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="/home" id="submit-btn">Submit</button>
+            <a href="/home">Click</a> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script>
+
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/useradd.js" type="text/javascript"></script>
+
 
 </body>
+
 </html>

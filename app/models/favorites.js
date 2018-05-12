@@ -1,18 +1,16 @@
-module.exports = function(sequelize, DataTypes) {
-    var Favorite = sequelize.define("favorite", {
-      // the routeName gets saved as a string
-      APIfunc: {
-        type: DataTypes.UUID,
-        defaultValue: function() {
-            return APIfunc()
-        },
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      }
-    }, {
-      timestamps: false
-    })
-    return Favorite
-  }
+var Sequelize = require("sequelize");
+var sequelize = require("../config/connection.js");
+
+
+var Favorites = sequelize.define("favorites", {
+  omdbID: Sequelize.STRING,
+  is_favorite: Sequelize.BOOLEAN,
+  watchlist_rank: Sequelize.INTEGER,
+  userID: Sequelize.STRING
+});
+
+
+
+Favorites.sync();
+
+module.exports = Favorites;
