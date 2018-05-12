@@ -33,9 +33,35 @@ $(document).ready(function() {
       console.log(url)
     $.get(url, function(data) {
       console.log(data);
+      for (i = 0; i < 12; i++) {
+        console.log(data.results[i])
+        $(".results-div").append('<div class="col-12 col-md-6 col-lg-4 col-xl-3">\
+            <div class="item-listing-container-skrn">\
+            <img src="http://image.tmdb.org/t/p/w185//' + data.results[i].poster_path + '" alt="Listing">\
+            <div class="item-listing-text-skrn">\
+            <div class="item-listing-text-skrn-vertical-align">\
+            <h6><a href="#">' + data.results[i].title + '</a></h6>\
+            <div\
+            class="circle-rating-pro"\
+            data-value="' + data.results[i].vote_average/100 + '"\
+            data-animation-start-value="' + data.results[i].vote_average/100 + '"\
+            data-size="32"\
+            data-thickness="3"\
+            data-fill="{&quot;color&quot;: &quot;#42b740&quot;}"\
+            data-empty-fill="#def6de"\
+                    data-reverse="true"\
+                  ><span style="color:#42b740;">' + data.results[i].vote_average + '</span></div>\
+                </div>\
+            </div>\
+            </div>\
+            </div>'
+        )
+        }
     });
   }
   genre()
+
+
   
 
 
